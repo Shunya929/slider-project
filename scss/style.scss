@@ -1,0 +1,52 @@
+@use "reset.scss";
+
+li {
+  list-style: none;
+}
+
+.l-container {
+  width: 1000px;
+  margin: 4em auto;
+  overflow: hidden;
+}
+
+.l-wrapper {
+  overflow: hidden;
+}
+
+.p-slider {
+  position: relative;
+  left: -600px;
+  display: flex;
+  width: 3000px;
+}
+
+img{
+  vertical-align: bottom;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  &.is-active {
+    transform: translateX(30px);
+  }
+}
+
+i::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f04b";
+  font-weight: 900;
+  font-size: 23px;
+}
+
+.c-SliderPrevButton {
+  display: block;
+  transform: rotate(180deg);
+}
+
+.c-SliderNextButton {
+  right: 0;
+}
+
+button {
+  background-color: #E5E0DB;
+}
