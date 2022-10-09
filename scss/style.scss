@@ -16,7 +16,7 @@ li {
 
 .p-slider {
   position: relative;
-  left: -600px;
+  // left: -600px;
   display: flex;
   width: 3000px;
 }
@@ -49,4 +49,15 @@ i::before {
 
 button {
   background-color: #E5E0DB;
+}
+
+.js-item:not(.active) {
+  transform: scale(0.4);
+  opacity: 0.4;
+  filter: blur(3px);
+}
+
+.js-item.active {
+  transform: initial;
+  opacity: initial;
 }

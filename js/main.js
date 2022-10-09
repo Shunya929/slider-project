@@ -38,22 +38,12 @@ jQuery(function($){
     sliding();
   });
 
-  //ページ数表示
   $("button").click(function(){
+    //ページ数表示
     $('.js-page-current-number').text(index + 1);
+    //サブ画像にアニメーションをつける
+    $(".js-item").eq(index).addClass("active");
+    $(".js-item").eq(index -1,index -2, index -3, index -4).removeClass("active");
+    $(".js-item").eq(index +1,index +2, index +3, index +4).removeClass("active");
   });
-
-
-  function animation() {
-    $("button").click(function() {
-      if("img" != index) {
-        $(".js-item").eq(index).css('opacity','0.4');
-        $(".js-item").eq(index).css('transform','scale(0.43)');
-      } else {
-        $(".js-item").eq(index).css('opacity','1');
-        $(".js-item").eq(index).css('transform','initial');
-      }
-     });
-  }
-  animation();
 });
