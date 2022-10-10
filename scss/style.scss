@@ -55,9 +55,11 @@ button {
   transform: scale(0.4);
   opacity: 0.4;
   filter: blur(3px);
+  z-index: 1;
 }
 
 .js-item.active {
   transform: initial;
   opacity: initial;
+  z-index: 10;
 }

@@ -38,6 +38,7 @@ jQuery(function($){
     sliding();
   });
 
+  //ボタンイベント
   $("button").click(function(){
     //ページ数表示
     $('.js-page-current-number').text(index + 1);
