@@ -11,36 +11,34 @@
 <body>
   <main>
     <div class="l-container">
-      <l-wrapper>
-        <ul class="p-slider js-slider">
-          <li class="c-item js-item active">
-            <img src="./img/slider_pic1.jpg" alt="" data-index="0">
-          </li>
-          <li class="c-item js-item">
-            <img src="./img/slider_pic2.jpg" alt="" data-index="1">
-          </li>
-          <li class="c-item js-item">
-            <img src="./img/slider_pic3.jpg" alt="" data-index="2">
-          </li>
-          <li class="c-item js-item">
-            <img src="./img/slider_pic4.jpg" alt="" data-index="3">
-          </li>
-          <li class="c-item js-item">
-            <img src="./img/slider_pic5.jpg" alt="" data-index="4">
-          </li>
+      <ul class="p-slider js-slider">
+        <li class="c-item js-item position5">
+          <img src="./img/slider_pic1.jpg" alt="" data-index="4">
+        </li>
+        <li class="c-item js-item active position1">
+          <img src="./img/slider_pic2.jpg" alt="" data-index="0">
+        </li>
+        <li class="c-item js-item position2">
+          <img src="./img/slider_pic3.jpg" alt="" data-index="1">
+        </li>
+        <li class="c-item js-item position3">
+          <img src="./img/slider_pic4.jpg" alt="" data-index="2">
+        </li>
+        <li class="c-item js-item position4">
+          <img src="./img/slider_pic5.jpg" alt="" data-index="3">
+        </li>
+      </ul>
+      <div class="p-page-number">
+        <span class="p-page-current-number js-page-current-number">1</span>
+        <span class="p-page-number-slash">/</span>
+        <span class="p-page-total-number">5</span>
+      </div>
+      <div class="p-page-button">
+        <ul>
+          <li><button class="c-SliderPrevButton js-SliderPrevButton"><i class="fa-regular fa-play"></i></button></li>
+          <li><button class="c-SliderNextButton js-SliderNextButon"><i class="fa-regular fa-play"></i></button></li>
         </ul>
-        <div class="p-page-number">
-          <span class="p-page-current-number js-page-current-number">1</span>
-          <span class="p-page-number-slash">/</span>
-          <span class="p-page-total-number">5</span>
-        </div>
-        <div class="p-page-button">
-          <ul>
-            <li><button class="c-SliderPrevButton js-SliderPrevButton"><i class="fa-regular fa-play"></i></button></li>
-            <li><button class="c-SliderNextButton js-SliderNextButon"><i class="fa-regular fa-play"></i></button></li>
-          </ul>
-        </div>
-      </l-wrapper>
+      </div>
     </div>
   </main>
   <script src="js/jquery-3.6.0.min.js"></script>
