@@ -3,6 +3,20 @@ jQuery(function($){
   let index = 1;
   //コンテンツの数を取得
   let slideCount = $(".js-item").length;
+  
+  //ミッキーマウスの形にする
+  function position() {
+    $(".js-item.position1").addClass("position5");
+    $(".js-item.position1").removeClass("position1")
+    $(".js-item.position2").addClass("position1");
+    $(".js-item.position2").removeClass("position2");
+    $(".js-item.position3").addClass("position2");
+    $(".js-item.position3").removeClass("position3");
+    $(".js-item.position4").addClass("position3");
+    $(".js-item.position4").removeClass("position4");
+    $(".js-item.position5").addClass("position4");
+    $(".js-item.position5").removeClass("position5");
+  }
 
   //目的のコンテンツまでスライドする関数
   function sliding() {
@@ -20,7 +34,7 @@ jQuery(function($){
 
     //leftの値をアニメーションで変更
     $(".js-slider").stop().animate({
-          left: "-300" * index
+          left: "-300" * (index - 1 )
         },300);
   }
 
@@ -29,13 +43,15 @@ jQuery(function($){
     //現在のコンテンツ番号から1を引く
     index--;
     sliding();
+    position();
   });
 
   //「次へ」ボタンをクリックした時の処理
   $(".js-SliderNextButon").click(function () {
-    //現在のコンテン番号に1を足す
+    //現在のインデックス番号に1を足す
     index++;
     sliding();
+    position();
   });
 
   //ボタンイベント
@@ -48,17 +64,6 @@ jQuery(function($){
     $(".js-item").eq(index -1,index -2, index -3, index -4).removeClass("active");
     $(".js-item").eq(index +1,index +2, index +3, index +4).removeClass("active");
     
-    //ミッキーマウスの形にする 
-    $(".js-item.position1").addClass("position5");
-    $(".js-item.position1;").removeClass("position1")
-    $(".js-item.position2").addClass("position1");
-    $(".js-item.position2").removeClass("position2");
-    $(".js-item.position3").addClass("position2");
-    $(".js-item.position3").removeClass("position3");
-    $(".js-item.position4").addClass("position3");
-    $(".js-item.position4").removeClass("position4");
-    $(".js-item.position5").addClass("position4");
-    $(".js-item.position5").removeClass("position5");
 
 
 
