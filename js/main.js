@@ -3,19 +3,27 @@ jQuery(function($){
   let index = 1;
   //コンテンツの数を取得
   let slideCount = $(".js-item").length;
-  
-  //ミッキーマウスの形にする
-  function position() {
-    $(".js-item.position1").addClass("position5");
-    $(".js-item.position1").removeClass("position1")
-    $(".js-item.position2").addClass("position1");
-    $(".js-item.position2").removeClass("position2");
-    $(".js-item.position3").addClass("position2");
-    $(".js-item.position3").removeClass("position3");
-    $(".js-item.position4").addClass("position3");
-    $(".js-item.position4").removeClass("position4");
-    $(".js-item.position5").addClass("position4");
-    $(".js-item.position5").removeClass("position5");
+  //position番号管理
+  let pnumber = $(".js-item").children().data('number');
+  Number(pnumber);
+  console.log(pnumber);
+
+  //初めのposition番号を管理
+  if(pnumber == 1) {
+    $(".js-item").addClass("position1");
+    // console.log(pnumber);
+  }else if(pnumber === 2) {
+    $(".js-item").addClass("position2");
+    // console.log(pnumber);
+  }else if(pnumber === 3) {
+    $(".js-item").addClass("position3");
+    // console.log(pnumber);
+  }else if(pnumber === 4) {
+    $(".js-item").addClass("position4");
+    // console.log(pnumber);
+  }else if(pnumber === 5) {
+    $(".js-item").addClass("position5");
+    // console.log(pnumber);
   }
 
   //目的のコンテンツまでスライドする関数
@@ -38,20 +46,38 @@ jQuery(function($){
         },300);
   }
 
+  function PositionNext(pnumber) {
+    for(let i = 0; i < slideCount; i++) {
+      pnumber ++;
+      if(pnumber > slideCount) {
+        pnumber = 1;
+      }
+    }
+  }
+
+  function PositionPrevious(pnumber) {
+    for(let i = 0; i < slideCount; i--) {
+      pnumber --;
+      if(pnumber < 0) {
+        pnumber = slideCount;
+      }
+    }
+  }
+
   //「前へ」ボタンをクリックした時の処理
-  $(".js-SliderPrevButton").click(function () {
+  $(".js-SliderPrevButton").click(function (pnumber) {
     //現在のコンテンツ番号から1を引く
     index--;
     sliding();
-    position();
+    // PositionPrevious();
   });
 
   //「次へ」ボタンをクリックした時の処理
-  $(".js-SliderNextButon").click(function () {
+  $(".js-SliderNextButon").click(function (pnumber) {
     //現在のインデックス番号に1を足す
     index++;
     sliding();
-    position();
+    PositionNext();
   });
 
   //ボタンイベント
@@ -63,47 +89,6 @@ jQuery(function($){
     $(".js-item").eq(index).addClass("active");
     $(".js-item").eq(index -1,index -2, index -3, index -4).removeClass("active");
     $(".js-item").eq(index +1,index +2, index +3, index +4).removeClass("active");
-    
-
-
-
-
-
-    // let mainpic = $(".js-item").hasClass('active');
-    // let position1 = $(".js-item").hasClass('position1');
-    // let position2 = $(".js-item").hasClass('position2');
-    // let position3 = $(".js-item").hasClass('position3');
-    // let position4 = $(".js-item").hasClass('position4');
-    // let position5 = $(".js-item").hasClass('position5');
-    // }
-    // }else if(mainpic.eq(3)) {
-    //   $(".js-item").toggleClass("position4");
-    //   $(".js-item").removeClass("position1,position2,position3,position5");
-    // }else if(mainpic.eq(4)) {
-    //   $(".js-item").toggleClass("position5");
-    //   $(".js-item").removeClass("position1,position2,position3,position4");
-    // }
-
-    // $(".js-item").eq(index).toggleClass("position1");
-    // $(".js-item").eq(index +1).toggleClass("position2");
-    // $(".js-item").eq(index +2).toggleClass("position3");
-    // $(".js-item").eq(index +3).toggleClass("position4");
-    // $(".js-item").eq(index +4).toggleClass("position5");
-
-    // for(let i = 0; i < slideCount; i++ ) {
-    //   $(".js-item").eq(i - 1).toggleClass('position2');
-    //     $(".js-item").eq(i - 2).toggleClass('position3');
-    //     $(".js-item").eq(i - 3).toggleClass('position4');
-    //     $(".js-item").eq(i - 4).toggleClass('position5');
-    //     $(".js-item").eq(i).toggleClass('position1');
-    //     if (i >=  slideCount) i = 0;
-      // $.when(
-      //   $(".js-item").eq(i).removeClass('position'[i - 1])
-      //   )
-      //   .done(function() {
-      //     $(".js-item").eq(i).toggleClass('position'[i]);
-      //   });
-    // }
   });
 
 });

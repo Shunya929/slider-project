@@ -1,4 +1,5 @@
 {
   "dartsass.targetDirectory": "css",
-  "dartsass.sassBinPath": "/Users/shunya/node_modules/.bin/sass"
+  "dartsass.sassBinPath": "/Users/shunya/node_modules/.bin/sass",
+  "liveServer.settings.port": 5501
 }
