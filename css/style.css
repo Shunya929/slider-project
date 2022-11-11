@@ -4,19 +4,16 @@
    # Global selectors
    # ================================================================= */
 html {
-  -webkit-box-sizing: border-box;
-  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   box-sizing: border-box;
-  tab-size: 4;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
   word-break: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
 }
 
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: inherit;
   background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
   box-sizing: inherit;
 }
@@ -28,17 +25,17 @@ html {
 }
 
 * {
-  margin: 0;
   padding: 0; /* Reset `padding` and `margin` of all elements */
+  margin: 0;
 }
 
 /* # =================================================================
    # General elements
    # ================================================================= */
 hr {
-  color: inherit; /* Correct border color in Firefox. */
-  height: 0; /* Add the correct box sizing in Firefox */
   overflow: visible; /* Show the overflow in Edge and IE */
+  height: 0; /* Add the correct box sizing in Firefox */
+  color: inherit; /* Correct border color in Firefox. */
 }
 
 details,
@@ -59,7 +56,6 @@ small {
 }
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
   border-bottom: none; /* Remove the bottom border in Chrome 57 */
   /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
   text-decoration: underline;
@@ -233,8 +229,8 @@ legend {
   color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
   display: table; /* Correct the text wrapping in Edge and IE */
   max-width: 100%; /* Correct the text wrapping in Edge and IE */
-  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
   white-space: normal; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
 }
 
 ::-webkit-file-upload-button {
@@ -284,39 +280,35 @@ li {
 }
 
 .l-container {
+  width: 900px;
   margin: 10em auto;
   overflow: hidden;
-  width: 900px;
 }
 
 .p-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
+  display: flex;
   width: 100%;
 }
 
 img {
-  border-radius: 50%;
-  height: 300px;
   vertical-align: bottom;
   width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 img.is-active {
-  -webkit-transform: translateX(30px);
   transform: translateX(30px);
 }
 
 i::before {
-  content: "\f04b";
   font-family: "Font Awesome 6 Free";
-  font-size: 23px;
+  content: "\f04b";
   font-weight: 900;
+  font-size: 23px;
 }
 
 .c-SliderPrevButton {
-  -webkit-transform: rotate(180deg);
   display: block;
   transform: rotate(180deg);
 }
@@ -334,17 +326,16 @@ button {
 }
 
 .c-item:not(.active) {
-  -webkit-transform: scale(0.4);
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
-  opacity: 0.4;
   transform: scale(0.4);
+  opacity: 0.4;
+  filter: blur(3px);
   z-index: 1;
 }
 
 .c-item.active {
-  -webkit-transform: initial;
-  opacity: initial;
   transform: initial;
+  opacity: initial;
   z-index: 10;
 }
+
+/*# sourceMappingURL=style.css.map */
